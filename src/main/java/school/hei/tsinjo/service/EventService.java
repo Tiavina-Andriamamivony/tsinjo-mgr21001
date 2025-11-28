@@ -18,7 +18,7 @@ public class EventService {
   private final EventRepository eventRepository;
   private final VolaPsp volaPsp;
 
-  public List<Event> findAllWithPaymentResolution() {
+  public List<Event>                  findAllWithPaymentResolution() {
     return eventRepository.findAllByOrderByCreationInstantDesc().stream()
         .map(this::resolvePayment)
         .toList();
